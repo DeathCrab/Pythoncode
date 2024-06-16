@@ -33,7 +33,7 @@ android.permissions = INTERNET
 # (int) Window size
 window.size = 360, 640
 
-# (str) Orientation (landscape, sensorLandscape, portrait or all)
+# (str) Supported orientation (one of landscape, sensorLandscape, portrait or sensorPortrait)
 orientation = portrait
 
 # (list) List of service to declare
@@ -83,9 +83,6 @@ android.add_libs_armeabi = libs/armeabi-v7a/libpython3.8.so
 
 # (str) Android build tools version
 # android.build_tools_version = 28.0.3
-
-# (str) Supported orientation (one of landscape, sensorLandscape, portrait or sensorPortrait)
-orientation = portrait
 
 # (str) iOS entry point
 ios.entry_point = kivy_main.py
