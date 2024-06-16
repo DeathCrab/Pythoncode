@@ -1,48 +1,27 @@
-name: CI
+[app]
 
-on:
-  push:
-    branches: [ main ]
+# (str) Title of your application
+title = UncertaintyApp
 
-jobs:
-  build:
-    runs-on: ubuntu-20.04
+# (str) Package name
+package.name = uncertaintyapp
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+# (str) Package domain (needed for android/ios packaging)
+package.domain = org.example
 
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+# (list) Application requirements
+requirements = python3,kivy,numpy
 
-      - name: Get Date
-        id: get-date
-        run: |
-          echo "date=$(date -u "+%Y%m%d")" >> $GITHUB_ENV
-        shell: bash
+# (str) Icon of the application
+icon.filename = icon.png
 
-      - name: Cache Buildozer global directory
-        uses: actions/cache@v2
-        with:
-          path: .buildozer_global
-          key: buildozer-global-${{ hashFiles('buildozer.spec') }}
+# (str) Source code directory (relative to this directory)
+source.dir = .
 
-      - name: Cache Buildozer
-        uses: actions/cache@v2
-        with:
-          path: .buildozer
-          key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
+# (str) Main entry point of the application (relative to source directory)
+source.include_exts = py,png,jpg,kv,atlas
+source.exclude_exts = spec, txt
+source.exclude_dirs = tests, .git, __pycache__
 
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        with:
-          command: buildozer android debug
-          buildozer_version: stable
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: package
-          path: ${{ steps.buildozer.outputs.filename }}
+# (list) List of service to declare
+services = NAME-OF-YOUR-SERVICE
