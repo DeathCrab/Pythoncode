@@ -1,28 +1,43 @@
 [app]
 
 # (str) Title of your application
-title = UncertaintyApp
+title = Your App Title
 
 # (str) Package name
-package.name = uncertaintyapp
+package.name = yourpackagename
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.uncertaintyapp
+package.domain = org.yourdomain
 
-# (str) Human readable version of the application
+# (str) Source code where the main.py live
+source.include_exts = py,png,jpg,kv,atlas
+
+# (list) Application requirements
+requirements = python3,kivy,numpy,plyer,buildozer
+
+# (str) Icon of the application
+icon.filename = path/to/your/icon.png
+
+# (str) Application versioning
 version = 1.0.0
 
-# (int) Numeric version of the application
-version.code = 1
+# (list) Python for android packages
+android.p4a_whitelist = numpy, kivy
 
-# (str) Application icon (used if you are using the launcher)
-icon.filename = icon.png
-
-# (list) Application permissions
+# (list) Android additional parameters
 android.permissions = INTERNET
 
-# (bool) Indicate whether the application should be fullscreen or not
+# (str) Android entry point
+android.entrypoint = org.kivy.android.PythonActivity
+
+# (str) iOS entry point
+ios.entry_point = kivy_main.py
+
+# (bool) Indicate whether the application should be fullscreen
 fullscreen = 0
+
+# (list) List of service to declare
+services =
 
 # (str) Presplash of the application
 presplash.filename = presplash.png
