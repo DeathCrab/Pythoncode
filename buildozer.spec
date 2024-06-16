@@ -22,7 +22,7 @@ icon.filename = path/to/your/icon.png
 version = 1.0.0
 
 # (list) Python for android packages
-android.p4a_whitelist = numpy, kivy
+android.whitelist = numpy, kivy
 
 # (str) Android entry point
 android.entrypoint = org.kivy.android.PythonActivity
