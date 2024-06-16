@@ -39,20 +39,26 @@ orientation = portrait
 # (list) List of service to declare
 services =
 
-# (list) Android whitelist
+# (list) Android whitelist (whitelist specific modules from being removed)
 android.whitelist = numpy,kivy
 
 # (str) Android entry point
 android.entrypoint = org.kivy.android.PythonActivity
 
-# (list) Android additional libraries to copy into libs/armeabi
-android.add_libs_armeabi = libs/armeabi-v7a/libpython3.8.so
-
 # (bool) Indicate whether the application should be fullscreen
 fullscreen = 0
 
-# (list) List of intent filters (for example to open a file)
+# (list) Intent filters
 # android.manifest.intent_filters =
+
+# (list) Android additional libraries to copy into libs/armeabi
+android.add_libs_armeabi = libs/armeabi-v7a/libpython3.8.so
+
+# (str) Path to Android NDK
+# android.ndk_path =
+
+# (str) Path to Android SDK
+# android.sdk_path =
 
 # (str) Android NDK version to use
 # android.ndk = 21b
@@ -62,18 +68,6 @@ fullscreen = 0
 
 # (str) Android logcat filters
 # android.logcat_filters = *:S python:D
-
-# (str) Path to Android NDK
-# android.ndk_path =
-
-# (str) Path to Android SDK
-# android.sdk_path =
-
-# (str) Path to a custom Android SDK
-# android.android_api =
-
-# (str) Path to a custom Android SDK NDK
-# android.ndk_api =
 
 # (str) Android version_code (integer)
 # android.version_code = 1
@@ -90,8 +84,8 @@ fullscreen = 0
 # (str) Android build tools version
 # android.build_tools_version = 28.0.3
 
-# (list) Python for android packages
-android.whitelist = numpy,kivy
+# (str) Supported orientation (one of landscape, sensorLandscape, portrait or sensorPortrait)
+orientation = portrait
 
 # (str) iOS entry point
 ios.entry_point = kivy_main.py
@@ -105,5 +99,5 @@ log_enable = 1
 # (str) Log file name
 log_filename = buildozer.log
 
-# (str) Warning on root
+# (bool) Warn on root
 warn_on_root = 1
