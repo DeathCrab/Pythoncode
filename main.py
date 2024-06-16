@@ -6,7 +6,6 @@ from kivy.uix.button import Button
 
 import numpy as np
 
-
 class UncertaintyApp(App):
     def build(self):
         self.root = BoxLayout(orientation='vertical')
@@ -45,7 +44,7 @@ class UncertaintyApp(App):
 
             total_uncertainty = np.sqrt(std_dev ** 2 + type_b_uncertainty ** 2)
 
-            self.result_label.text = f"Total uncertainty: {total_uncertainty}"
+            self.result_label.text = f"Total uncertainty: {total_uncertainty:.2f}"
         except Exception as e:
             self.result_label.text = f"Error: {str(e)}"
 
