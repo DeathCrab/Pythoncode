@@ -39,6 +39,7 @@ fullscreen = 0
 # (list) List of service to declare
 services =
 
+
 # (str) Presplash of the application
 presplash.filename = presplash.png
 
